@@ -9,8 +9,14 @@ public interface Pizza {
         return this;
     }
 
-    void prepare();
+    PizzaType pizzaType();
 
-    void bake();
+    private void prepare() {
+        System.out.println(this.pizzaType().toString() + " prepare ***");
+    }
+
+    private void bake() {
+        System.out.println(this.pizzaType().toString() + " bake ***");
+    }
 
 }

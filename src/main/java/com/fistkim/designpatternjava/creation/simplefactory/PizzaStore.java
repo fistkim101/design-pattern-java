@@ -1,15 +1,15 @@
 package com.fistkim.designpatternjava.creation.simplefactory;
 
-public class PizzaStore {
+public class PizzaStore { // PizzaStore == Client
 
-    private PizzaFactory pizzaFactory;
+    private final PizzaFactory pizzaFactory;
 
     public PizzaStore(PizzaFactory pizzaFactory) {
         this.pizzaFactory = pizzaFactory;
     }
 
-    public Pizza orderPizza(String type) {
-        return pizzaFactory.makePizza(type).served();
+    public Pizza orderPizza(PizzaType pizzaType) {
+        return pizzaFactory.makePizza(pizzaType);
     }
 
 }
