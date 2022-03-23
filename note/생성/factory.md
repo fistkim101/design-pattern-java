@@ -11,14 +11,3 @@ OCP 원칙을 잘 지켰다면 기능을 추가하거나 변경해야 할 때 �
 
 +a 로 팩토리 메소드 패턴에서 interface 의 default 메소드와 private 메소드를 사용하면 abstract class 의 구현 없이 creator의 생성 행위를 더 간편하게
 일반화 할 수 있는데, interface 의 default 기능은 자바 8 부터, interface 의 private 메소드는 자바 9부터 나온 기능임을 인지한다.
-
-
-![이미지 이름](../../image/img.png)
-
-
-* simple factory 패턴 머릿속에 다 그릴 수 있도록 하기
-* factory method 패턴 머릿속에 다 그릴 수 있도록 하기
-* 동일한 예제를 simple factory 패턴으로도 구현하고 factory method 패턴으로도 구현하고 서로 비교해보기(백기선님 예제 보고 거기서 다룬 모든 것은 내가 만드는 예제에서 다 다루도록 만든다)
-
-대원칙은 애매하게 아는 것이 아니라 모든 것이 구체적이고 명확해야한다는 것이다.
-
