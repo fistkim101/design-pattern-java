@@ -1,5 +1,9 @@
 package com.fistkim.designpatternjava;
 
+import com.fistkim.designpatternjava.creation.abstractfactory.Computer;
+import com.fistkim.designpatternjava.creation.abstractfactory.ComputerFactory;
+import com.fistkim.designpatternjava.creation.abstractfactory.MacComputerFactory;
+import com.fistkim.designpatternjava.creation.abstractfactory.MacSupportDeviceFactory;
 import com.fistkim.designpatternjava.creation.simplefactory.Pizza;
 import com.fistkim.designpatternjava.creation.simplefactory.PizzaFactory;
 import com.fistkim.designpatternjava.creation.simplefactory.PizzaStore;
@@ -19,9 +23,15 @@ public class DesignPatternJavaApplication {
 //        System.out.println(setting1 == setting2);
 
         // simple factory
-        PizzaStore pizzaStore = new PizzaStore(new PizzaFactory());
-        Pizza pizza1 = pizzaStore.orderPizza(PizzaType.CHEESE);
-        Pizza pizza2 = pizzaStore.orderPizza(PizzaType.PEPPERONI);
+//        PizzaStore pizzaStore = new PizzaStore(new PizzaFactory());
+//        Pizza pizza1 = pizzaStore.orderPizza(PizzaType.CHEESE);
+//        Pizza pizza2 = pizzaStore.orderPizza(PizzaType.PEPPERONI);
+
+        // abstract factory
+        ComputerFactory macComputerFactory = new MacComputerFactory(new MacSupportDeviceFactory());
+        Computer macComputer = macComputerFactory.createComputer();
+        //Computer samsungComputer = samsungComputerFactory.createComputer();
+        
     }
 
 }
