@@ -4,12 +4,18 @@ import com.fistkim.designpatternjava.creation.abstractfactory.Computer;
 import com.fistkim.designpatternjava.creation.abstractfactory.ComputerFactory;
 import com.fistkim.designpatternjava.creation.abstractfactory.MacComputerFactory;
 import com.fistkim.designpatternjava.creation.abstractfactory.MacSupportDeviceFactory;
+import com.fistkim.designpatternjava.creation.builder.DefaultTourPlanBuilder;
+import com.fistkim.designpatternjava.creation.builder.TourPlan;
+import com.fistkim.designpatternjava.creation.builder.TourPlanBuilder;
+import com.fistkim.designpatternjava.creation.builder.TourPlanDirector;
 import com.fistkim.designpatternjava.creation.simplefactory.Pizza;
 import com.fistkim.designpatternjava.creation.simplefactory.PizzaFactory;
 import com.fistkim.designpatternjava.creation.simplefactory.PizzaStore;
 import com.fistkim.designpatternjava.creation.simplefactory.PizzaType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class DesignPatternJavaApplication {
@@ -28,10 +34,35 @@ public class DesignPatternJavaApplication {
 //        Pizza pizza2 = pizzaStore.orderPizza(PizzaType.PEPPERONI);
 
         // abstract factory
-        ComputerFactory macComputerFactory = new MacComputerFactory(new MacSupportDeviceFactory());
-        Computer macComputer = macComputerFactory.createComputer();
-        //Computer samsungComputer = samsungComputerFactory.createComputer();
-        
+//        ComputerFactory macComputerFactory = new MacComputerFactory(new MacSupportDeviceFactory());
+//        Computer macComputer = macComputerFactory.createComputer();
+//        //Computer samsungComputer = samsungComputerFactory.createComputer();
+
+        // builder (director X)
+//        TourPlanBuilder tourPlanBuilder = new DefaultTourPlanBuilder();
+//        TourPlan tourPlan1 = tourPlanBuilder
+//                .name("당일치기여행")
+//                .destination("수원")
+//                .days(0)
+//                .build();
+//
+//        TourPlan tourPlan2 = tourPlanBuilder
+//                .name("해외여행")
+//                .destination("일본")
+//                .days(3)
+//                .destination("도쿄")
+//                .startDate(LocalDate.now())
+//                .endDate(LocalDate.now().plusDays(3))
+//                .build();
+//
+//        System.out.println(tourPlan1.toString());
+//        System.out.println(tourPlan2.toString());
+
+        // builder(director O)
+        TourPlanDirector tourPlanDirector = new TourPlanDirector(new DefaultTourPlanBuilder());
+        System.out.println(tourPlanDirector.getTokyoTour().toString());
+        System.out.println(tourPlanDirector.getSuwonTour().toString());
+
     }
 
 }
