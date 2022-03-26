@@ -1,28 +1,14 @@
 package com.fistkim.designpatternjava;
 
-import com.fistkim.designpatternjava.creation.abstractfactory.Computer;
-import com.fistkim.designpatternjava.creation.abstractfactory.ComputerFactory;
-import com.fistkim.designpatternjava.creation.abstractfactory.MacComputerFactory;
-import com.fistkim.designpatternjava.creation.abstractfactory.MacSupportDeviceFactory;
-import com.fistkim.designpatternjava.creation.builder.DefaultTourPlanBuilder;
-import com.fistkim.designpatternjava.creation.builder.TourPlan;
-import com.fistkim.designpatternjava.creation.builder.TourPlanBuilder;
-import com.fistkim.designpatternjava.creation.builder.TourPlanDirector;
 import com.fistkim.designpatternjava.creation.prototype.GitIssue;
 import com.fistkim.designpatternjava.creation.prototype.GitRepository;
-import com.fistkim.designpatternjava.creation.simplefactory.Pizza;
-import com.fistkim.designpatternjava.creation.simplefactory.PizzaFactory;
-import com.fistkim.designpatternjava.creation.simplefactory.PizzaStore;
-import com.fistkim.designpatternjava.creation.simplefactory.PizzaType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.time.LocalDate;
 
 @SpringBootApplication
 public class DesignPatternJavaApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         SpringApplication.run(DesignPatternJavaApplication.class, args);
 
         // singleton
@@ -72,15 +58,18 @@ public class DesignPatternJavaApplication {
         gitIssue1.setContents("로그인시오류");
         gitIssue1.setGitRepository(gitRepository);
 
-        GitRepository gitRepository2 = new GitRepository("fistkim101", "design-pattern-java");
-        GitIssue gitIssue2 = new GitIssue();
-        gitIssue1.setKind("bug");
-        gitIssue1.setContents("로그아웃시오류");
-        gitIssue1.setGitRepository(gitRepository2);
+//        GitRepository gitRepository2 = new GitRepository("fistkim101", "design-pattern-java");
+//        GitIssue gitIssue2 = new GitIssue();
+//        gitIssue1.setKind("bug");
+//        gitIssue1.setContents("로그아웃시오류");
+//        gitIssue1.setGitRepository(gitRepository2);
+        GitIssue gitIssue2 = (GitIssue) gitIssue1.clone();
+        gitIssue2.setContents("로그아웃시오류");
 
         System.out.println(gitIssue1 != gitIssue2);
         System.out.println(!gitIssue1.equals(gitIssue2));
         System.out.println(gitIssue1.getClass() == gitIssue2.getClass());
+        System.out.println(!gitIssue1.getUrl().equals(gitIssue2.getUrl()));
     }
 
 }
