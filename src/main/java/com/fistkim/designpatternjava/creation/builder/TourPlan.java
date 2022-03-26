@@ -46,6 +46,26 @@ public class TourPlan {
         return endDate;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
     @Override
     public String toString(){
         return "TourPlan {" +

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public interface TourPlanBuilder {
 
+    TourPlanBuilder newInstance();
+
     TourPlanBuilder name(String name);
 
     TourPlanBuilder destination(String destination);

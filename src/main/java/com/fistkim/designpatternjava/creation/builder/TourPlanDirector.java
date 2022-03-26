@@ -11,7 +11,7 @@ public class TourPlanDirector {
     }
 
     public TourPlan getSuwonTour() {
-        return tourPlanBuilder
+        return tourPlanBuilder.newInstance()
                 .name("당일치기여행")
                 .destination("수원")
                 .days(0)
@@ -19,7 +19,7 @@ public class TourPlanDirector {
     }
 
     public TourPlan getTokyoTour() {
-        return tourPlanBuilder
+        return tourPlanBuilder.newInstance()
                 .name("해외여행")
                 .destination("일본")
                 .days(3)
