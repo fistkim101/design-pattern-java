@@ -42,8 +42,13 @@ public class GitIssue implements Cloneable {
 
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected GitIssue clone() throws CloneNotSupportedException {
+        // return super.clone();
+
+        // 얕은 복사로 인해서 깊은 복사를 위해 완전히 새로 구현
+        GitIssue gitIssue = (GitIssue) super.clone();
+        gitIssue.setGitRepository(new GitRepository(this.gitRepository.getUserName(), this.gitRepository.getRepositoryName()));
+        return gitIssue;
     }
 
 }
