@@ -1,4 +1,4 @@
-package com.fistkim.designpatternjava.creation.practice2;
+package com.fistkim.designpatternjava.creation.practice2.builder;
 
 public class Pizza {
 

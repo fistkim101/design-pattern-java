@@ -1,4 +1,4 @@
-package com.fistkim.designpatternjava.creation.practice2;
+package com.fistkim.designpatternjava.creation.practice2.builder;
 
 public class PizzaBuilderClient {
     public static void main(String[] args) {
@@ -18,4 +18,5 @@ public class PizzaBuilderClient {
         pizza1.printData();
         pizza2.printData();
     }
+
 }

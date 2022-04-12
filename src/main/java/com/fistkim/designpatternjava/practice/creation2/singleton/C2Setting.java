@@ -2,7 +2,7 @@ package com.fistkim.designpatternjava.practice.creation2.singleton;
 
 public class C2Setting {
 
-    public C2Setting() {
+    private C2Setting() {
     }
 
     private static class SettingHolder {
